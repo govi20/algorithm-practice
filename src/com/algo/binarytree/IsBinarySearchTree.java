@@ -1,13 +1,17 @@
 package com.algo.binarytree;
 
-public class BinaryTree {
+import java.util.Scanner;
+
+public class IsBinarySearchTree {
     Node root;
 
-    public BinaryTree() {
+
+    public IsBinarySearchTree() {
         this.root = new Node ();
     }
 
     public static void main(String[] args) {
+        Scanner scanner = new Scanner (System.in);
         Node root = new Node (14);
         root.left = new Node (6);
         root.right = new Node (21);
@@ -30,25 +34,5 @@ public class BinaryTree {
         if(root.right != null && root.right.data <= root.data)
             return false;
         return isBST (root.left) && isBST (root.right);
-    }
-}
-
-class Node {
-    int data;
-    Node left;
-    Node right;
-
-    public Node() {
-
-    }
-
-    public Node(int data) {
-        this.data = data;
-    }
-
-    public Node(int data, Node left, Node right) {
-        this(data);
-        this.left = left;
-        this.right = right;
     }
 }
